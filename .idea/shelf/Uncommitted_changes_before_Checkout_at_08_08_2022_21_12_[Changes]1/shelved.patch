@@ -1,0 +1,132 @@
+Index: src/main/java/com/example/javanorm/HelloApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.javanorm;\r\n\r\nimport jakarta.ws.rs.ApplicationPath;\r\nimport jakarta.ws.rs.core.Application;\r\n\r\n@ApplicationPath(\"/api\")\r\npublic class HelloApplication extends Application {\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/example/javanorm/HelloApplication.java b/src/main/java/com/example/javanorm/HelloApplication.java
+--- a/src/main/java/com/example/javanorm/HelloApplication.java	
++++ b/src/main/java/com/example/javanorm/HelloApplication.java	
+@@ -4,6 +4,7 @@
+ import jakarta.ws.rs.core.Application;
+ 
+ @ApplicationPath("/api")
+-public class HelloApplication extends Application {
++public class 
++elloApplication extends Application {
+ 
+ }
+\ No newline at end of file
+Index: .idea/artifacts/JavaNORM_war_exploded.xml
+===================================================================
+diff --git a/.idea/artifacts/JavaNORM_war_exploded.xml b/.idea/artifacts/JavaNORM_war_exploded.xml
+deleted file mode 100644
+--- a/.idea/artifacts/JavaNORM_war_exploded.xml	
++++ /dev/null	
+@@ -1,23 +0,0 @@
+-<component name="ArtifactManager">
+-  <artifact type="exploded-war" name="JavaNORM:war exploded">
+-    <output-path>$PROJECT_DIR$/target/JavaNORM-1.0-SNAPSHOT</output-path>
+-    <properties id="maven-jee-properties">
+-      <options>
+-        <exploded>true</exploded>
+-        <module>JavaNORM</module>
+-        <packaging>war</packaging>
+-      </options>
+-    </properties>
+-    <root id="root">
+-      <element id="directory" name="WEB-INF">
+-        <element id="directory" name="classes">
+-          <element id="module-output" name="JavaNORM" />
+-        </element>
+-      </element>
+-      <element id="directory" name="META-INF">
+-        <element id="file-copy" path="$PROJECT_DIR$/target/JavaNORM-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+-      </element>
+-      <element id="javaee-facet-resources" facet="JavaNORM/web/Web" />
+-    </root>
+-  </artifact>
+-</component>
+\ No newline at end of file
+Index: .idea/artifacts/JavaNORM_war.xml
+===================================================================
+diff --git a/.idea/artifacts/JavaNORM_war.xml b/.idea/artifacts/JavaNORM_war.xml
+deleted file mode 100644
+--- a/.idea/artifacts/JavaNORM_war.xml	
++++ /dev/null	
+@@ -1,14 +0,0 @@
+-<component name="ArtifactManager">
+-  <artifact type="war" name="JavaNORM:war">
+-    <output-path>$PROJECT_DIR$/target</output-path>
+-    <properties id="maven-jee-properties">
+-      <options>
+-        <module>JavaNORM</module>
+-        <packaging>war</packaging>
+-      </options>
+-    </properties>
+-    <root id="archive" name="JavaNORM-1.0-SNAPSHOT.war">
+-      <element id="artifact" artifact-name="JavaNORM:war exploded" />
+-    </root>
+-  </artifact>
+-</component>
+\ No newline at end of file
+Index: src/main/java/com/example/javanorm/HelloResource.java
+===================================================================
+diff --git a/src/main/java/com/example/javanorm/HelloResource.java b/src/main/java/com/example/javanorm/HelloResource.java
+deleted file mode 100644
+--- a/src/main/java/com/example/javanorm/HelloResource.java	
++++ /dev/null	
+@@ -1,14 +0,0 @@
+-package com.example.javanorm;
+-
+-import jakarta.ws.rs.GET;
+-import jakarta.ws.rs.Path;
+-import jakarta.ws.rs.Produces;
+-
+-@Path("/hello-world")
+-public class HelloResource {
+-    @GET
+-    @Produces("text/plain")
+-    public String hello() {
+-        return "Hello, World!";
+-    }
+-}
+\ No newline at end of file
+Index: src/main/java/xui.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/xui.java b/src/main/java/xui.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/xui.java	
+@@ -0,0 +1,27 @@
++import java.util.Scanner;
++
++public class xui {
++    public static void main (String[] args) {
++       func(3, 4);
++       readArray();
++    }
++
++
++    public static int[] readArray() {
++        int[] arr;
++        int n;
++        Scanner in = new Scanner(System.in);
++        n = in.nextInt();
++        arr = new int[n];
++        for (int i = 0; i > n; i++)
++            arr[i] = in.nextInt();
++        return arr;
++    }
++    public static int func(int a, int b){
++        int result = 1;
++        for (int i = 0; i < b; i++)
++            result *=a;
++        System.out.println(result);
++        return result;
++    }
++}
